@@ -1,0 +1,50 @@
+./encode.sh 日本語 にほんご ニホンゴ
++ result=
++ given_terms=($@)
++ array_to_encoded_strings given_terms
++ eval 'terms=(${given_terms[@]})'
+++ terms=(${given_terms[@]})
++ i=0
++ '[' 0 '<' 3 ']'
++ '[' 0 '!=' 0 ']'
++ term=日本語
+++ nkf -W8MQ
+++ echo 日本語
++ term==E6=97=A5=E6=9C=AC=E8=AA=9E
+++ sed -e 's/=$//' -e s/=/%/g -e s/%7E/~/g -e s/%5F/_/g -e s/%2D/-/g -e s/%2E/./g
+++ echo =E6=97=A5=E6=9C=AC=E8=AA=9E
++ term=%E6%97%A5%E6%9C%AC%E8%AA%9E
++ result=%E6%97%A5%E6%9C%AC%E8%AA%9E
++ let i++
++ '[' 1 '<' 3 ']'
++ '[' 1 '!=' 0 ']'
++ result='%E6%97%A5%E6%9C%AC%E8%AA%9E\n'
++ term=にほんご
+++ nkf -W8MQ
+++ echo にほんご
++ term==E3=81=AB=E3=81=BB=E3=82=93=E3=81=94
+++ sed -e 's/=$//' -e s/=/%/g -e s/%7E/~/g -e s/%5F/_/g -e s/%2D/-/g -e s/%2E/./g
+++ echo =E3=81=AB=E3=81=BB=E3=82=93=E3=81=94
++ term=%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94
++ result='%E6%97%A5%E6%9C%AC%E8%AA%9E\n%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94'
++ let i++
++ '[' 2 '<' 3 ']'
++ '[' 2 '!=' 0 ']'
++ result='%E6%97%A5%E6%9C%AC%E8%AA%9E\n%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94\n'
++ term=ニホンゴ
+++ nkf -W8MQ
+++ echo ニホンゴ
++ term==E3=83=8B=E3=83=9B=E3=83=B3=E3=82=B4
+++ sed -e 's/=$//' -e s/=/%/g -e s/%7E/~/g -e s/%5F/_/g -e s/%2D/-/g -e s/%2E/./g
+++ echo =E3=83=8B=E3=83=9B=E3=83=B3=E3=82=B4
++ term=%E3%83%8B%E3%83%9B%E3%83%B3%E3%82%B4
++ result='%E6%97%A5%E6%9C%AC%E8%AA%9E\n%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94\n%E3%83%8B%E3%83%9B%E3%83%B3%E3%82%B4'
++ let i++
++ '[' 3 '<' 3 ']'
++ echo -e '%E6%97%A5%E6%9C%AC%E8%AA%9E\n%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94\n%E3%83%8B%E3%83%9B%E3%83%B3%E3%82%B4'
+%E6%97%A5%E6%9C%AC%E8%AA%9E
+%E3%81%AB%E3%81%BB%E3%82%93%E3%81%94
+%E3%83%8B%E3%83%9B%E3%83%B3%E3%82%B4
+
+
+
